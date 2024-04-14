@@ -9,6 +9,7 @@ function solution(n) {
 let result = solution(10);
 console.log(result);
 
+// 수열 공식
 // function solution(n) {
 //   let half = Math.floor(n / 2);
 //   return half * (half + 1);
