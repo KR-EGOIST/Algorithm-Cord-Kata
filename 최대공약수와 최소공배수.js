@@ -16,3 +16,14 @@ function solution(n, m) {
 
 let result = solution(3, 12);
 console.log(result);
+
+/*
+true/false 조건을 (r = a % b) 로 판별
+0이 나오면 for문이 종료되게 됩니다.
+*/
+
+function solution(a, b) {
+  var r;
+  for (var ab = a * b; (r = a % b); a = b, b = r) {}
+  return [b, ab / b];
+}
