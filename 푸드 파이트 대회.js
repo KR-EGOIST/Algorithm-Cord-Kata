@@ -8,7 +8,7 @@ String() 메소드는 데이터 타입을 문자열로 변환시킵니다.
 
 function solution(food) {
   let res = '';
-  for (let i = 0; i < food.length; i++) {
+  for (let i = 1; i < food.length; i++) {
     res += String(i).repeat(Math.floor(food[i] / 2));
   }
   return res + '0' + [...res].reverse().join('');
