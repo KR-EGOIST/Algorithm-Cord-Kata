@@ -39,7 +39,8 @@ function solution(X, Y) {
   for (const char of X) {
     // 처음 나온 숫자는 numObj[char] 에 없으므로 undefined 가 나오는데 undefined 와 0 을 OR(||) 하면 0 이 반환된다.
     // 그래서 + 1 을 해 1번 나왔다고 해주는 것이다.
-    // 같은 숫자가 나오면 numObj[char]에 값이 있으므로 0과 OR(||) 을 하면 1 이 반환된다.
+    // OR(||) 연산자는 피연산자 순차 검사 중 true값이 있다면 그 즉시 그 값을 반환한다.
+    // 같은 숫자가 나오면 numObj[char]에 값이 있으므로 0과 OR(||) 을 하면 numObj[char]의 value 가 반환된다.
     console.log(numObj[char], numObj[char] || 0);
     numObj[char] = (numObj[char] || 0) + 1;
   }
