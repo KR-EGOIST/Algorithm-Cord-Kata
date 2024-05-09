@@ -41,11 +41,8 @@ function solution(X, Y) {
     // 그래서 + 1 을 해 1번 나왔다고 해주는 것이다.
     // OR(||) 연산자는 피연산자 순차 검사 중 true값이 있다면 그 즉시 그 값을 반환한다.
     // 같은 숫자가 나오면 numObj[char]에 값이 있으므로 0과 OR(||) 을 하면 numObj[char]의 value 가 반환된다.
-    console.log(numObj[char], numObj[char] || 0);
     numObj[char] = (numObj[char] || 0) + 1;
   }
-
-  // console.log(numObj);
 
   for (const char of Y) {
     if (!numObj[char]) continue;
