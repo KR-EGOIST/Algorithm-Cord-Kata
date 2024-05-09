@@ -22,6 +22,8 @@ function solution(X, Y) {
 let result = solution('5525', '1255');
 console.log(result);
 
+//===========================================================================
+
 // want
 // X, Y에서 짝으로 숫자가 존재하는 경우, 해당 문자열을 통해 만들 수 있는 최대값을 반환하라
 
@@ -56,4 +58,37 @@ function solution(X, Y) {
     .map((num) => +num)
     .sort((a, b) => b - a)
     .join('');
+}
+
+//========================================================================================
+
+function solution(X, Y) {
+    var answer = '';
+    let lenX = X.split("");
+    let lenY = Y.split("");
+    
+    let countX = new Array(10).fill(0);
+    let countY = new Array(10).fill(0);
+    
+    for(let count of lenX){
+        countX[Number(count)]++;
+    }
+    for(let count of lenY){
+        countY[Number(count)]++;
+    }
+    for (let i = 9; i >= 0; i--) {
+        let commonCount = Math.min(countX[i], countY[i]);
+        answer += i.toString().repeat(commonCount);
+    }
+  
+    
+    if (answer === '') {
+        return "-1";
+    }
+
+    if (answer.match(/^0+$/)) {
+        return "0";
+    }
+    
+    return answer;
 }
