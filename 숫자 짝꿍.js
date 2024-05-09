@@ -15,7 +15,7 @@ function solution(X, Y) {
   // 짝꿍이 0으로만 구성되어 있다면, 짝꿍은 0입니다.
   if (Number(answer) === 0) return '0';
 
-  // answer 을 구조분해하고 내림차순 정렬한 뒤 문자열로 변환해준다.
+  // answer 을 분해하고 내림차순 정렬한 뒤 문자열로 변환해준다.
   return [...answer].sort((a, b) => b - a).join('');
 }
 
