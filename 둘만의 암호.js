@@ -68,6 +68,13 @@ function solution(s, skip, index) {
 
 //=================================================================
 
+/*
+[^문자]
+괄호안의 문자를 제외한 것
+[^lgEn] "l" "g" "E" "N" 4개 문자를 제외
+※ 대괄호 안에서 쓰면 제외의 뜻, 대괄호 밖에서 쓰면 시작점 뜻
+*/:
+
 const solution = (s, skip, index) => {
   let ans = '';
   const matched = 'abcdefghijklmnopqrstuvwxyz'.match(
