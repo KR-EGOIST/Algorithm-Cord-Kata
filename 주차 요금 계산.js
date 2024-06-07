@@ -8,7 +8,7 @@ function solution(fees, records) {
     // 분으로 통일
     const currentTime = Number(hour) * 60 + Number(min);
 
-    // parking 객체에 입고할 차량 정보가 없으면 등록
+    // parking 객체에 입차할 차량 정보가 없으면 등록
     if (!parking[id]) {
       parking[id] = { time: 0, id };
     }
@@ -21,7 +21,7 @@ function solution(fees, records) {
       parking[id].lastInTime = currentTime;
     }
 
-    // 현재 차량 상태가 OUT 이면 time에 (현재 시간 - 입고 시간) 을 더해준다.
+    // 현재 차량 상태가 OUT 이면 time에 (현재 시간 - 입차 시간) 을 더해준다.
     parking[id].time += currentTime - parking[id].lastInTime;
   });
 
