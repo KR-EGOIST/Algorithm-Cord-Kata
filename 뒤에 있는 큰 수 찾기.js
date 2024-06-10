@@ -1,5 +1,5 @@
 function solution(numbers) {
-  let answer = Array(numbers.length).fill(-1);
+  let answer = new Array(numbers.length).fill(-1);
 
   // 어차피 마지막 숫자는 뒤에 큰 수가 없으므로 -1 이므로
   // 마지막 숫자를 제외한 나머지 숫자들에 대해서만 비교하면 된다.
@@ -29,3 +29,19 @@ function solution(numbers) {
 
 let result = solution([9, 1, 5, 3, 6, 2]);
 console.log(result);
+
+//============================================================
+
+function solution(numbers) {
+    const result = new Array(numbers.length).fill(-1);
+    const stack = [];
+    for (let i = 0; i < numbers.length; i++) {
+        while (numbers[i] > numbers[stack.at(-1)]){
+            const index = stack.pop()
+            result[index] = numbers[i];
+        }
+            
+        stack.push(i);
+    }
+    return result;
+}
